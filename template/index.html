@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="refresh" content="20">
+	<title>Day Dream Interfaces</title>
+	<style type="text/css">
+		html, body {
+			height: 100%;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			background-color: #000;
+			color:#FFF;
+			font-family: monospace;
+			font-size: 12px;
+		}
+		.layout {
+			position: absolute;
+			right: 0px;
+			left: 0px;
+			top: 0px;
+			bottom: 0px;
+
+			overflow: hidden;
+		}
+		.free-wall {
+			width: 100%;
+			height: 100%;
+		}
+		.brick{
+			border-right:1px solid #CCC;
+			border-bottom:1px solid #CCC;
+			overflow: hidden;
+		}
+
+
+		.brick .inner{
+			padding:3px 5px;
+		}
+
+
+
+		.brick.FillCharacters{
+			word-break: break-all;
+		}
+
+
+
+		.brick.Listing{}
+		.brick.Listing table{
+			width:100%;
+			border-collapse: collapse;
+		}
+		.brick.Listing tr.selected{
+			background: #A5A5A5;
+			color:#000;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="layout">
+		<div id="freewall" class="free-wall"></div>
+	</div>
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/underscore/underscore-min.js"></script>
+	<script src="bower_components/chance/chance.js"></script>
+	<script src="bower_components/freewall/freewall.js"></script>
+	<script>
+		window.DDI = {
+			modules: {},
+			registerModule: function(Module, suitableShapes, maxUsable){
+				Module.suitableShapes = suitableShapes;
+				Module.maxUsable = maxUsable;
+				Module.used = 0;
+				this.modules[Module.name] = Module;
+			}
+		};
+	</script>
+	<script src="js/modules/FillCharacters.js"></script>
+	<script src="js/modules/Listing.js"></script>
+	<script src="js/modules/Gif.js"></script>
+	<script src="js/modules/CodeScroll.js"></script>
+<script type="module/data" id="CodeScroll-code">
+include "../js/modules/CodeScroll_files/code.txt"
+</script>
+
+	<script src="js/app.js?v=2"></script>
+
+</body>
+</html>

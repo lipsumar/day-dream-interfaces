@@ -1,0 +1,22 @@
+{
+  "name": "day-dream-interfaces",
+  "version": "0.0.1",
+  "authors": [
+    "Emmanuel Pire <piremmanuel@gmail.com>"
+  ],
+  "description": "A cheesy screensaver that mimcs the cheesy screens in movies",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "chance": "~0.7.5",
+    "freewall": "~1.0.5",
+    "underscore": "~1.8.3"
+  }
+}
