@@ -20,7 +20,6 @@
 		if(window.pause) return;
 		//this.$inner[0].innerHTML += chance.string({length:this.wordLength});
 		this.$inner.append('<span class="'+(chance.d20()<=2 ? 'inverse' :'')+'">'+chance.string({length:this.wordLength})+'</span>');
-
 		if(this.$inner.height() < this.brick.height){
 			setTimeout(_.bind(this.fillMore, this), this.speed);
 		}else{
