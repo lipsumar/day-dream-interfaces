@@ -12,7 +12,18 @@ It's also not yet a screensaver _per se_, it's a web app. To use it as a screen 
 Later I plan to bundle it as an actual screensaver.
 
 
-## Instalation
+## Installation
+
+### Easy mode
+
+1. Get a screensaver that can display web pages:
+	* For Mac OS: https://github.com/liquidx/webviewscreensaver
+2. Go to the screensaver options and set the url to http://lipsumar.github.io/day-dream-interfaces/
+
+**Pros:** You will automatically have the latest stable version<br>
+**Cons:** You need an internet connexion for it to work
+
+### Developer mode
 
 1. Get a screensaver that can display web pages:
 	* For Mac OS: https://github.com/liquidx/webviewscreensaver
@@ -20,13 +31,15 @@ Later I plan to bundle it as an actual screensaver.
 3. Run `bower install`
 4. Go to the screensaver options and set the url to where index.html is located on your machine. (ie. `file:///Users/foo/Documents/day-dream-interfaces/index.html`)
 
+**Pros:** It will work even offline<br>
+**Cons:** You need `bower` and you'll need to `git pull` to get new versions
 
 ## Contribute
 
-For developement you need to run `npm install` first.
+For developement you need to run `npm install` and have `grunt` installed.
 
 
-It's very easy to add you own module, basically you need to:
+It's very easy to add your own module, basically you need to:
 
 * Create a new file in `js/modules/` (copy the very simple `FillCharacters.js` as a boilerplate)
 * Include it in `template/index.html`
