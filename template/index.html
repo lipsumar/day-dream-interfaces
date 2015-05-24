@@ -39,6 +39,10 @@
 			padding:3px 5px;
 		}
 
+		.brick .rel{
+			position: relative;
+		}
+
 
 
 		.brick.FillCharacters{
@@ -57,6 +61,24 @@
 			color:#000;
 		}
 
+
+		.brick.Streamgraph .description{
+			position: absolute;
+			top:0;
+			left: 0;
+			padding:4px 6px;
+			background: rgba(0,0,0,0.5);
+			text-transform: uppercase;
+		}
+
+		.brick.Streamgraph .vert{
+			width:1px;
+			background: rgba(255,255,255,0.2);
+			position: absolute;
+			height: 100%;
+			top:0;
+		}
+
 	</style>
 </head>
 <body>
@@ -68,6 +90,8 @@
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="bower_components/underscore/underscore-min.js"></script>
 	<script src="bower_components/chance/chance.js"></script>
+	<script src="js/chance-mixins/technical-terms.js"></script>
+	<script src="bower_components/d3/d3.min.js"></script>
 	<script src="bower_components/freewall/freewall.js"></script>
 	<script>
 		window.DDI = {
@@ -77,13 +101,14 @@
 				Module.maxUsable = maxUsable;
 				Module.used = 0;
 				this.modules[Module.name] = Module;
-			}
+			},
 		};
 	</script>
 	<script src="js/modules/FillCharacters.js"></script>
 	<script src="js/modules/Listing.js"></script>
 	<script src="js/modules/Gif.js"></script>
 	<script src="js/modules/CodeScroll.js"></script>
+	<script src="js/modules/Streamgraph.js"></script>
 <script type="module/data" id="CodeScroll-code">
 include "../js/modules/CodeScroll_files/code.txt"
 </script>
