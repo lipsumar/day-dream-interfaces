@@ -56,7 +56,7 @@
 
 	// register module
 
-	window.DDI.registerModule(CodeScroll, ['square-large','flat'], 1);
+	window.DDI.registerModule(CodeScroll, ['square-large'], 1);
 
 }());
 
