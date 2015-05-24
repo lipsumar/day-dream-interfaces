@@ -2,7 +2,7 @@
 
 A cheesy screensaver that mimcs the cheesy screens in movies.
 
-![Day Dream Interfaces preview](https://www.dropbox.com/s/cz5zbk95fafdvyo/Capture%20d%27%C3%A9cran%202015-05-22%2018.09.21.png?dl=1)
+![Day Dream Interfaces preview](https://www.dropbox.com/s/camm7ljpy3qsxmm/Capture%20d%27%C3%A9cran%202015-05-24%2018.30.29.png?dl=1)
 
 
 It is a work in progress, more cheesy modules will come !
@@ -10,6 +10,10 @@ It is a work in progress, more cheesy modules will come !
 It's also not yet a screensaver _per se_, it's a web app. To use it as a screen saver, follow the "instalation" steps below.
 
 Later I plan to bundle it as an actual screensaver.
+
+## Live demo
+
+http://lipsumar.github.io/day-dream-interfaces/
 
 
 ## Installation
