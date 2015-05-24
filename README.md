@@ -38,6 +38,17 @@ Later I plan to bundle it as an actual screensaver.
 
 For developement you need to run `npm install` and have `grunt` installed.
 
+There is a grunt task to build `index.html`, execute the grunt task by running `grunt build`
+
+### Available libraries
+
+* jquery
+* underscore
+* chance
+* d3
+
+
+### Create your module
 
 It's very easy to add your own module, basically you need to:
 
@@ -63,4 +74,4 @@ The app will create `new` instance(s) of your module and call `.start()` to star
 
 If your module needs files, put it in `js/modules/<NameOfYourModule>_files/`.
 
-There is a grunt task to build `index.html`, (`CodeScroll` is using it to include some string) execute the grunt task by running `grunt build`
+
