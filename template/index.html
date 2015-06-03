@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="refresh" content="20">
+	<meta http-equiv="refresh" content="25">
 	<title>Day Dream Interfaces</title>
 	<style type="text/css">
 		html, body {
@@ -41,12 +41,35 @@
 
 		.brick .rel{
 			position: relative;
+			width:100%;
+			height:100%;
 		}
+
+
+
+
+
+
+
+		.brick .description{
+			position: absolute;
+			top:0;
+			left: 0;
+			padding:4px 6px;
+			background: rgba(0,0,0,0.5);
+			text-transform: uppercase;
+		}
+
+
 
 
 
 		.brick.FillCharacters{
 			word-break: break-all;
+		}
+		.brick.FillCharacters .inverse{
+			background: #FFF;
+			color: #000;
 		}
 
 
@@ -62,14 +85,6 @@
 		}
 
 
-		.brick.Streamgraph .description{
-			position: absolute;
-			top:0;
-			left: 0;
-			padding:4px 6px;
-			background: rgba(0,0,0,0.5);
-			text-transform: uppercase;
-		}
 
 		.brick.Streamgraph .vert{
 			width:1px;
@@ -80,21 +95,87 @@
 		}
 
 
+		@keyframes topToBottom {
+		    0%   {top:0%;}
+		    50%  {top:100%;}
+		    100%  {top:0%;}
+		}
 
-		.brick.Fingerprint .scanLine{
+		.brick.Fingerprint .scanLine,.brick.Fingerprint .scanLine2{
 			height: 2px;
 			background: #FFF;
 			width: 100%;
 			position: absolute;
-			top:0;
+			top:0%;
+			-webkit-animation-name: topToBottom;
+    		        animation-name: topToBottom;
+    		-webkit-animation-duration: 3s;
+    		        animation-duration: 3s;
+    		-webkit-animation-iteration-count: infinite;
+    		        animation-iteration-count: infinite;
+		}
+		.brick.Fingerprint .scanLine2{
+			-webkit-animation-delay: 0.4s;
+			animation-delay: 0.4s;
+			-webkit-animation-duration: 4s;
+			        animation-duration: 4s;
+
 		}
 		.brick.Fingerprint .point{
 			position: absolute;
 			width: 5px;
 			height: 5px;
 			border: 1px solid #FFF;
+			background: #FFF;
 		}
 
+
+		.BruteForce .ocult{
+			position: absolute;
+			top:0;
+			left:0;
+			width: 100%;
+			background: rgba(0,0,0,0.35);
+
+		}
+		.BruteForce .finder{
+			position: absolute;
+			left:0px;
+			border:2px solid #FFF;
+			height: 23px;
+			width: 100%;
+		}
+
+		.BruteForce .column{
+			position: absolute;
+			width:20px;
+			word-wrap: break-word;
+			font-size: 20px;
+			opacity: 0.8;
+		}
+
+		.BruteForce .finderColumn{
+			position: absolute;
+			width: 20px;
+			height: 19px;
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+
+
+
+		.Binary{
+			word-break: break-all;
+			font-size: 14px;
+			text-align: center;
+		}
+		.Binary span{
+			opacity: 0.3;
+		}
+		.Binary span.active{
+			opacity: 1;
+		}
 	</style>
 </head>
 <body>
@@ -126,6 +207,8 @@
 	<script src="js/modules/CodeScroll.js"></script>
 	<script src="js/modules/Streamgraph.js"></script>
 	<script src="js/modules/Fingerprint.js"></script>
+	<script src="js/modules/BruteForce.js"></script>
+	<script src="js/modules/Binary.js"></script>
 <script type="module/data" id="CodeScroll-code">
 include "../js/modules/CodeScroll_files/code.txt"
 </script>

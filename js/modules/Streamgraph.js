@@ -33,7 +33,7 @@ it's all based on a d3 example (http://bl.ocks.org/mbostock/4060954)
 	}
 
 	Streamgraph.prototype.start = function() {
-		this.$el.html('<div class="rel"><div class="description">'+chance.techterms()+'</div></div>');
+		this.$el.html('<div class="rel" style="opacity:0"><div class="description">'+chance.techterms()+'</div></div>');
 		this.$rel = this.$el.find('.rel');
 
 		var layerCount = chance.integer({min:3, max:15});
@@ -72,15 +72,16 @@ it's all based on a d3 example (http://bl.ocks.org/mbostock/4060954)
 			this.$rel.append('<div class="vert" style="left:'+((this.brick.width/samplesPerLayer)*i)+'px"></div>');
 		}
 
+		this.$rel.animate({opacity:1}, 600);
 
-		setTimeout(_.bind(this.transition, this, layer, area, layerCount, samplesPerLayer), 500);
+		setTimeout(_.bind(this.transition, this, layer, area, layerCount, samplesPerLayer), chance.integer({min:500,max:2000}));
 	};
 
 
 	Streamgraph.prototype.transition = function(l, area, layerCount, samplesPerLayer) {
 
 		var l2 = this.stack(d3.range(layerCount).map(function() { return bumpLayer(samplesPerLayer); }));
-
+		var dur = chance.integer({min:2000,max:8000});
 		d3.selectAll("path")
 			.data(function() {
 				var d = l2;
@@ -88,10 +89,10 @@ it's all based on a d3 example (http://bl.ocks.org/mbostock/4060954)
 				return l = d;
 			})
 			.transition()
-			.duration(chance.integer({min:1000,max:2000}))
+			.duration(dur)
 			.attr("d", area);
 
-		setTimeout(_.bind(this.transition, this, l2, area, layerCount, samplesPerLayer), chance.integer({min:3000,max:6000}));
+		setTimeout(_.bind(this.transition, this, l2, area, layerCount, samplesPerLayer), dur+chance.integer({min:1000,max:4000}));
 	};
 
 

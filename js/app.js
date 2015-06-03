@@ -54,6 +54,10 @@ window.jQuery(function(){
 						}else{
 							brick.shape = 'square-large';
 						}
+					}else{
+						if( brick.width < 180){
+							brick.shape = 'tall-thin';
+						}
 					}
 				}
 				//console.log(brick.ratio);
@@ -71,7 +75,7 @@ window.jQuery(function(){
 				brick.$el.addClass(Module.name);
 				brick.$el.addClass(brick.shape);
 				var module = new Module(brick);
-				module.start();
+				setTimeout(Module.prototype.start.bind(module), chance.integer({min:200, max:3000}));
 			}, this);
 		},
 

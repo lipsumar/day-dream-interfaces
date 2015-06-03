@@ -69,6 +69,7 @@ window.DDI.registerModule(Module, suitableShapes, maxUsable);
 * `suitableShapes` is an `array` describing in which kind of shapes your module can be included. Possible values are:
 	* `flat`
 	* `tall`
+	* `tall-thin`
 	* `square-small`
 	* `square-large`
 * `maxUsable` is optional. It's an `Integer` saying how many times this module can be included at most
