@@ -14,27 +14,31 @@
 		});
 
 
-		this.$el.html('<div class="rel"><div class="scanLine"></div></div>');
-		this.$rel = this.$el.find('.rel');
-		this.$scanLine = this.$el.find('.scanLine');
+		this.$el.html('<div class="rel"><div class="scanLine"></div><div class="scanLine2" style="top:'+this.brick.height+'px"></div></div>');
+
+
 
 		this.speed = chance.integer({min:1000, max:2000});
 
-		this.scanToBottom();
+		this.changeImage();
+
 
 
 	};
 
 
-	Fingerprint.prototype.scanToBottom = function() {
-		this.$scanLine.animate({top:this.brick.height}, this.speed, 'swing', _.bind(this.scanToTop, this));
+
+
+	Fingerprint.prototype.changeImage = function() {
+		var rndImage = chance.integer({min:1,max:25});
+		this.$el.css({
+			background:'transparent url(js/modules/Fingerprint_files/'+rndImage+'.jpg) no-repeat center center',
+			backgroundSize:'contain'
+		});
+		setTimeout(this.changeImage.bind(this), chance.integer({min:2000, max:2500}));
 	};
-	Fingerprint.prototype.scanToTop = function() {
-		this.$scanLine.animate({top:0}, this.speed, 'swing', _.bind(this.scanToBottom, this));
-		if(chance.d10()<5){
-			this.addFoundPoint();
-		}
-	};
+
+
 
 
 	Fingerprint.prototype.addFoundPoint = function() {
