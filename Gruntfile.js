@@ -10,6 +10,18 @@ module.exports = function(grunt) {
 				dest: './',
 				flatten: true
 			}
+		},
+
+
+		cacheBust: {
+			assets: {
+				files: {
+					src: ['index.html']
+				}
+			},
+			options:{
+				rename:false
+			}
 		}
 
 
@@ -19,10 +31,11 @@ module.exports = function(grunt) {
 
 	// load Npm tasks
 	grunt.loadNpmTasks('grunt-includes');
+	grunt.loadNpmTasks('grunt-cache-bust');
 
 
 	// define our shortcut commands
-	grunt.registerTask('build', ['includes:build']);
+	grunt.registerTask('build', ['includes:build', 'cacheBust']);
 
 
 
